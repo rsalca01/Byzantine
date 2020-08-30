@@ -1,0 +1,666 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="SoS$s" id="1" x="287" y="-48">
+    <field name="name">Byzantine</field>
+    <field name="sos_type">acknowledged</field>
+    <field name="#system">+</field>
+    <field name="#evolution">+</field>
+    <field name="#dependability_guarantee">+</field>
+    <field name="#behaviour">+</field>
+    <field name="#security">+</field>
+    <comment pinned="false" h="159" w="767">This is an example System-of-Systems (SoS) block named "example_block", on the work-space.
+
+You may:
+ 1. Drag the block/work-space with the mouse.
+ 2. Minimize / Maximize / Partially minimize a block by double clicking on it.
+ 3. Drag and drop new blocks from the Toolbox from *left* hand side.
+ 4. Add related blocks to this block by clicking (+) drop-down below.
+ 5. Right click on the block/work-space to see a menu.
+ 6. Close this *comment* by clicking on the (?) button.
+    </comment>
+    <statement name="is_composed_of:system">
+      <block type="CS$s" id="40" collapsed="true">
+        <field name="cardinality">1</field>
+        <field name="name">OHC</field>
+        <field name="system_type">closed</field>
+        <field name="#boundary">+</field>
+        <field name="#state_space">+</field>
+        <field name="#HMI">+</field>
+        <field name="#CPS">+</field>
+        <field name="#service">+</field>
+        <field name="#role_player">+</field>
+        <field name="#physical_system">+</field>
+        <field name="#RUI">+</field>
+        <field name="#dependability_guarantee">+</field>
+        <field name="#fault_containment_region">+</field>
+        <field name="#MAPE_algorithm">+</field>
+        <field name="#security">+</field>
+        <field name="#clock">+</field>
+        <field name="#system_resource">+</field>
+        <field name="#architectural_style">+</field>
+        <field name="#subsystem">+</field>
+        <field name="#state_variable">+</field>
+        <field name="#interface">+</field>
+        <field name="#dynamicity">+</field>
+        <statement name="has_a:state_space">
+          <block type="state_space$i" id="218">
+            <field name="name">Buttons_activation</field>
+            <field name="#state">+</field>
+            <statement name="has:state">
+              <block type="state$s" id="222">
+                <field name="name">Signal_sleep</field>
+                <next>
+                  <block type="state$s" id="223">
+                    <field name="name">Signal_start</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+        <statement name="is_composed_of:HMI">
+          <block type="HMI$s" id="216">
+            <field name="name">Kilogui</field>
+          </block>
+        </statement>
+        <statement name="provides:service">
+          <block type="service$s" id="97" collapsed="true">
+            <field name="name">Setup</field>
+            <field name="#state_variable">+</field>
+          </block>
+        </statement>
+        <statement name="interacts_with:role_player">
+          <block type="role_player$s" id="217">
+            <field name="cardinality">1</field>
+            <field name="name">Operator</field>
+          </block>
+        </statement>
+        <statement name="has:RUI">
+          <block type="RUPI$s" id="225" collapsed="true">
+            <field name="name">OHC_infrared</field>
+            <field name="has_connection">FALSE</field>
+            <field name="#connecting_strategy">+</field>
+            <field name="#interface_specification">+</field>
+            <field name="#interface_port">+</field>
+            <field name="#afferent_environment">+</field>
+            <field name="#efferent_environment">+</field>
+            <field name="#interface_model">+</field>
+            <field name="#thing">+</field>
+            <field name="#environment">+</field>
+            <field name="#RUPI">+</field>
+            <field name="#probe">+</field>
+            <field name="#security">+</field>
+            <next>
+              <block type="RUMI$s" id="224" collapsed="true">
+                <field name="name">OHC_RUMI</field>
+                <field name="has_connection">FALSE</field>
+                <field name="#connecting_strategy">+</field>
+                <field name="#interface_specification">+</field>
+                <field name="#interface_port">+</field>
+                <field name="#afferent_environment">+</field>
+                <field name="#efferent_environment">+</field>
+                <field name="#interface_model">+</field>
+                <field name="#service">+</field>
+                <field name="#message">+</field>
+                <field name="#RUMI">+</field>
+                <field name="#probe">+</field>
+                <field name="#security">+</field>
+                <next>
+                  <block type="__link" id="260">
+                    <field name="link_to">RUMI / General_RUMI</field>
+                    <data>RUMI : 256 : 0</data>
+                    <next>
+                      <block type="__link" id="261">
+                        <field name="link_to">RUPI / General_RUPI</field>
+                        <data>RUPI : 257 : 0</data>
+                        <next>
+                          <block type="__link" id="262">
+                            <field name="link_to">RUMI / Lieutenant _RUMI</field>
+                            <data>RUMI : 258 : 0</data>
+                            <next>
+                              <block type="__link" id="263">
+                                <field name="link_to">RUPI / Lieutenant _RUPI</field>
+                                <data>RUPI : 259 : 0</data>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="CS$s" id="41" collapsed="true">
+            <field name="cardinality">1</field>
+            <field name="name">General</field>
+            <field name="system_type">autonomous</field>
+            <field name="#boundary">+</field>
+            <field name="#state_space">+</field>
+            <field name="#HMI">+</field>
+            <field name="#CPS">+</field>
+            <field name="#service">+</field>
+            <field name="#role_player">+</field>
+            <field name="#physical_system">+</field>
+            <field name="#RUI">+</field>
+            <field name="#dependability_guarantee">+</field>
+            <field name="#fault_containment_region">+</field>
+            <field name="#MAPE_algorithm">+</field>
+            <field name="#security">+</field>
+            <field name="#clock">+</field>
+            <field name="#system_resource">+</field>
+            <field name="#architectural_style">+</field>
+            <field name="#subsystem">+</field>
+            <field name="#state_variable">+</field>
+            <field name="#interface">+</field>
+            <field name="#dynamicity">+</field>
+            <statement name="provides:service">
+              <block type="service$s" id="251" collapsed="true">
+                <field name="name">Move</field>
+                <field name="#state_variable">+</field>
+                <next>
+                  <block type="service$s" id="253" collapsed="true">
+                    <field name="name">ChangeColor</field>
+                    <field name="#state_variable">+</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="has:RUI">
+              <block type="RUMI$s" id="256" collapsed="true">
+                <field name="name">General_RUMI</field>
+                <field name="has_connection">FALSE</field>
+                <field name="#connecting_strategy">+</field>
+                <field name="#interface_specification">+</field>
+                <field name="#interface_port">+</field>
+                <field name="#afferent_environment">+</field>
+                <field name="#efferent_environment">+</field>
+                <field name="#interface_model">+</field>
+                <field name="#service">+</field>
+                <field name="#message">+</field>
+                <field name="#RUMI">+</field>
+                <field name="#probe">+</field>
+                <field name="#security">+</field>
+                <next>
+                  <block type="RUPI$s" id="257" collapsed="true">
+                    <field name="name">General_RUPI</field>
+                    <field name="has_connection">FALSE</field>
+                    <field name="#connecting_strategy">+</field>
+                    <field name="#interface_specification">+</field>
+                    <field name="#interface_port">+</field>
+                    <field name="#afferent_environment">+</field>
+                    <field name="#efferent_environment">+</field>
+                    <field name="#interface_model">+</field>
+                    <field name="#thing">+</field>
+                    <field name="#environment">+</field>
+                    <field name="#RUPI">+</field>
+                    <field name="#probe">+</field>
+                    <field name="#security">+</field>
+                    <next>
+                      <block type="__link" id="264">
+                        <field name="link_to">RUMI / Lieutenant _RUMI</field>
+                        <data>RUMI : 258 : 0</data>
+                        <next>
+                          <block type="__link" id="265">
+                            <field name="link_to">RUPI / Lieutenant _RUPI</field>
+                            <data>RUPI : 259 : 0</data>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="has:state_variable">
+              <block type="state_variable$s" id="240" collapsed="true">
+                <field name="name">GameTime</field>
+                <field name="value">  ?  </field>
+                <field name="#state">+</field>
+                <next>
+                  <block type="state_variable$s" id="242" collapsed="true">
+                    <field name="name">GameRole</field>
+                    <field name="value">  ?  </field>
+                    <field name="#state">+</field>
+                    <next>
+                      <block type="state_variable$s" id="246" collapsed="true">
+                        <field name="name">GameStatus</field>
+                        <field name="value">  ?  </field>
+                        <field name="#state">+</field>
+                        <next>
+                          <block type="state_variable$s" id="244" collapsed="true">
+                            <field name="name">GenaralColor</field>
+                            <field name="value">  ?  </field>
+                            <field name="#state">+</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="CS$s" id="42" collapsed="true">
+                <field name="cardinality">1</field>
+                <field name="name">Lieutenant </field>
+                <field name="system_type">autonomous</field>
+                <field name="#boundary">+</field>
+                <field name="#state_space">+</field>
+                <field name="#HMI">+</field>
+                <field name="#CPS">+</field>
+                <field name="#service">+</field>
+                <field name="#role_player">+</field>
+                <field name="#physical_system">+</field>
+                <field name="#RUI">+</field>
+                <field name="#dependability_guarantee">+</field>
+                <field name="#fault_containment_region">+</field>
+                <field name="#MAPE_algorithm">+</field>
+                <field name="#security">+</field>
+                <field name="#clock">+</field>
+                <field name="#system_resource">+</field>
+                <field name="#architectural_style">+</field>
+                <field name="#subsystem">+</field>
+                <field name="#state_variable">+</field>
+                <field name="#interface">+</field>
+                <field name="#dynamicity">+</field>
+                <statement name="provides:service">
+                  <block type="service$s" id="249" collapsed="true">
+                    <field name="name">Move</field>
+                    <field name="#state_variable">+</field>
+                    <next>
+                      <block type="service$s" id="255" collapsed="true">
+                        <field name="name">ChangeColor</field>
+                        <field name="#state_variable">+</field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <statement name="has:RUI">
+                  <block type="RUMI$s" id="258" collapsed="true">
+                    <field name="name">Lieutenant _RUMI</field>
+                    <field name="has_connection">FALSE</field>
+                    <field name="#connecting_strategy">+</field>
+                    <field name="#interface_specification">+</field>
+                    <field name="#interface_port">+</field>
+                    <field name="#afferent_environment">+</field>
+                    <field name="#efferent_environment">+</field>
+                    <field name="#interface_model">+</field>
+                    <field name="#service">+</field>
+                    <field name="#message">+</field>
+                    <field name="#RUMI">+</field>
+                    <field name="#probe">+</field>
+                    <field name="#security">+</field>
+                    <next>
+                      <block type="RUPI$s" id="259" collapsed="true">
+                        <field name="name">Lieutenant _RUPI</field>
+                        <field name="has_connection">FALSE</field>
+                        <field name="#connecting_strategy">+</field>
+                        <field name="#interface_specification">+</field>
+                        <field name="#interface_port">+</field>
+                        <field name="#afferent_environment">+</field>
+                        <field name="#efferent_environment">+</field>
+                        <field name="#interface_model">+</field>
+                        <field name="#thing">+</field>
+                        <field name="#environment">+</field>
+                        <field name="#RUPI">+</field>
+                        <field name="#probe">+</field>
+                        <field name="#security">+</field>
+                        <next>
+                          <block type="__link" id="266">
+                            <field name="link_to">RUMI / General_RUMI</field>
+                            <data>RUMI : 256 : 0</data>
+                            <next>
+                              <block type="__link" id="267">
+                                <field name="link_to">RUPI / General_RUPI</field>
+                                <data>RUPI : 257 : 0</data>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <statement name="has:state_variable">
+                  <block type="state_variable$s" id="241" collapsed="true">
+                    <field name="name">GameTime</field>
+                    <field name="value">  ?  </field>
+                    <field name="#state">+</field>
+                    <next>
+                      <block type="state_variable$s" id="243" collapsed="true">
+                        <field name="name">GameRole</field>
+                        <field name="value">  ?  </field>
+                        <field name="#state">+</field>
+                        <next>
+                          <block type="state_variable$s" id="248" collapsed="true">
+                            <field name="name">GameStatus</field>
+                            <field name="value">  ?  </field>
+                            <field name="#state">+</field>
+                            <next>
+                              <block type="state_variable$s" id="245" collapsed="true">
+                                <field name="name">LieutenantColor </field>
+                                <field name="value">  ?  </field>
+                                <field name="#state">+</field>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="environment$s" id="232" x="901" y="-1">
+    <field name="name">Environment</field>
+    <field name="#situation_assessment">+</field>
+    <field name="#action">+</field>
+    <field name="#entity">+</field>
+    <field name="#state_variable">+</field>
+    <field name="#state_variable">+</field>
+    <field name="#system">+</field>
+    <field name="#evolution">+</field>
+    <statement name="has:entity">
+      <block type="__link" id="235">
+        <field name="link_to">CS / General</field>
+        <data>CS : 41 : 0</data>
+        <next>
+          <block type="__link" id="236">
+            <field name="link_to">CS / Lieutenant </field>
+            <data>CS : 42 : 0</data>
+            <next>
+              <block type="thing$s" id="238" collapsed="true">
+                <field name="name">WhiteBoard</field>
+                <field name="#dynamicity">+</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="sequence_diagram$s" id="1183" collapsed="true" x="343" y="363">
+    <field name="name">General</field>
+    <field name="#sub_sequence">+</field>
+    <statement name="has:sub_sequence">
+      <block type="execute$s" id="1290">
+        <field name="function">SendMyInfo</field>
+        <field name="#CS">+</field>
+        <statement name="cs:CS">
+          <block type="__link" id="1291">
+            <field name="link_to">CS / General</field>
+            <data>CS : 41 : 1</data>
+          </block>
+        </statement>
+        <next>
+          <block type="While$s" id="1221">
+            <field name="name">Name</field>
+            <field name="condition">!= AllMessagesSent</field>
+            <field name="#CS">+</field>
+            <field name="#state_variable">+</field>
+            <field name="#sequence">+</field>
+            <statement name="cs:CS">
+              <block type="__link" id="1222">
+                <field name="link_to">CS / General</field>
+                <data>CS : 41 : 1</data>
+              </block>
+            </statement>
+            <statement name="check_on:state_variable">
+              <block type="__link" id="1223">
+                <field name="link_to">State variable / GameStatus</field>
+                <data>state_variable : 246 : 1</data>
+              </block>
+            </statement>
+            <statement name="has:sequence">
+              <block type="execute$s" id="1191" collapsed="true">
+                <field name="function">Move</field>
+                <field name="#CS">+</field>
+                <statement name="cs:CS">
+                  <block type="__link" id="1192">
+                    <field name="link_to">CS / General</field>
+                    <data>CS : 41 : 1</data>
+                  </block>
+                </statement>
+                <next>
+                  <block type="execute$s" id="1202" collapsed="true">
+                    <field name="function">SendMessage</field>
+                    <field name="#CS">+</field>
+                    <statement name="cs:CS">
+                      <block type="__link" id="1203">
+                        <field name="link_to">CS / General</field>
+                        <data>CS : 41 : 1</data>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="sequence_diagram$s" id="1232" collapsed="true">
+        <field name="name">Lieutenant </field>
+        <field name="#sub_sequence">+</field>
+        <statement name="has:sub_sequence">
+          <block type="execute$s" id="1293">
+            <field name="function">SendMyInfo</field>
+            <field name="#CS">+</field>
+            <statement name="cs:CS">
+              <block type="__link" id="1294">
+                <field name="link_to">CS / Lieutenant </field>
+                <data>CS : 42 : 1</data>
+              </block>
+            </statement>
+            <next>
+              <block type="execute$s" id="1242">
+                <field name="function">MessageReceived</field>
+                <field name="#CS">+</field>
+                <statement name="cs:CS">
+                  <block type="__link" id="1243">
+                    <field name="link_to">CS / Lieutenant </field>
+                    <data>CS : 42 : 1</data>
+                  </block>
+                </statement>
+                <next>
+                  <block type="While$s" id="1233">
+                    <field name="name">Name</field>
+                    <field name="condition">!= AllMessagesSent</field>
+                    <field name="#CS">+</field>
+                    <field name="#state_variable">+</field>
+                    <field name="#sequence">+</field>
+                    <statement name="cs:CS">
+                      <block type="__link" id="1240">
+                        <field name="link_to">CS / Lieutenant </field>
+                        <data>CS : 42 : 1</data>
+                      </block>
+                    </statement>
+                    <statement name="check_on:state_variable">
+                      <block type="__link" id="1244">
+                        <field name="link_to">State variable / GameStatus</field>
+                        <data>state_variable : 248 : 1</data>
+                      </block>
+                    </statement>
+                    <statement name="has:sequence">
+                      <block type="execute$s" id="1236">
+                        <field name="function">Move</field>
+                        <field name="#CS">+</field>
+                        <statement name="cs:CS">
+                          <block type="__link" id="1248">
+                            <field name="link_to">CS / Lieutenant </field>
+                            <data>CS : 42 : 1</data>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="execute$s" id="1238">
+                            <field name="function">SendMessage</field>
+                            <field name="#CS">+</field>
+                            <statement name="cs:CS">
+                              <block type="__link" id="1249">
+                                <field name="link_to">CS / Lieutenant </field>
+                                <data>CS : 42 : 1</data>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="execute$s" id="1246">
+                        <field name="function">ChangeColor</field>
+                        <field name="#CS">+</field>
+                        <statement name="cs:CS">
+                          <block type="__link" id="1247">
+                            <field name="link_to">CS / Lieutenant </field>
+                            <data>CS : 42 : 1</data>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="sequence_diagram$s" id="1251" collapsed="true">
+            <field name="name">Setup</field>
+            <field name="#sub_sequence">+</field>
+            <statement name="has:sub_sequence">
+              <block type="execute$s" id="1278" collapsed="true">
+                <field name="function">Start</field>
+                <field name="#CS">+</field>
+                <statement name="cs:CS">
+                  <block type="__link" id="1279">
+                    <field name="link_to">CS / OHC</field>
+                    <data>CS : 40 : 1</data>
+                  </block>
+                </statement>
+                <next>
+                  <block type="service_request$s" id="1253" collapsed="true">
+                    <field name="arguments_in_CSV">True</field>
+                    <field name="on_condition">True</field>
+                    <field name="#state_variable">+</field>
+                    <field name="#service">+</field>
+                    <field name="#RUMI">+</field>
+                    <field name="#RUMI">+</field>
+                    <field name="#state_variable">+</field>
+                    <field name="#sequence">+</field>
+                    <field name="#sequence">+</field>
+                    <statement name="request:service">
+                      <block type="__link" id="1256">
+                        <field name="link_to">Service / Setup</field>
+                        <data>service : 97 : 1</data>
+                      </block>
+                    </statement>
+                    <statement name="source:RUMI">
+                      <block type="__link" id="1257">
+                        <field name="link_to">RUMI / OHC_RUMI</field>
+                        <data>RUMI : 224 : 1</data>
+                      </block>
+                    </statement>
+                    <statement name="destination:RUMI">
+                      <block type="__link" id="1258">
+                        <field name="link_to">RUMI / General_RUMI</field>
+                        <data>RUMI : 256 : 1</data>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="service_request$s" id="1267" collapsed="true">
+                        <field name="arguments_in_CSV">True</field>
+                        <field name="on_condition">True</field>
+                        <field name="#state_variable">+</field>
+                        <field name="#service">+</field>
+                        <field name="#RUMI">+</field>
+                        <field name="#RUMI">+</field>
+                        <field name="#state_variable">+</field>
+                        <field name="#sequence">+</field>
+                        <field name="#sequence">+</field>
+                        <statement name="request:service">
+                          <block type="__link" id="1268">
+                            <field name="link_to">Service / Setup</field>
+                            <data>service : 97 : 1</data>
+                          </block>
+                        </statement>
+                        <statement name="source:RUMI">
+                          <block type="__link" id="1269">
+                            <field name="link_to">RUMI / OHC_RUMI</field>
+                            <data>RUMI : 224 : 1</data>
+                          </block>
+                        </statement>
+                        <statement name="destination:RUMI">
+                          <block type="__link" id="1271">
+                            <field name="link_to">RUMI / Lieutenant _RUMI</field>
+                            <data>RUMI : 258 : 1</data>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="execute$s" id="1260">
+                            <field name="function">SetColor</field>
+                            <field name="#CS">+</field>
+                            <statement name="cs:CS">
+                              <block type="__link" id="1262">
+                                <field name="link_to">CS / General</field>
+                                <data>CS : 41 : 1</data>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="execute$s" id="1273">
+                                <field name="function">SetColor</field>
+                                <field name="#CS">+</field>
+                                <statement name="cs:CS">
+                                  <block type="__link" id="1274">
+                                    <field name="link_to">CS / Lieutenant </field>
+                                    <data>CS : 42 : 1</data>
+                                  </block>
+                                </statement>
+                                <next>
+                                  <block type="execute$s" id="1284">
+                                    <field name="function">Start</field>
+                                    <field name="#CS">+</field>
+                                    <statement name="cs:CS">
+                                      <block type="__link" id="1285">
+                                        <field name="link_to">CS / General</field>
+                                        <data>CS : 41 : 1</data>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="execute$s" id="1287">
+                                        <field name="function">Start</field>
+                                        <field name="#CS">+</field>
+                                        <statement name="cs:CS">
+                                          <block type="__link" id="1288">
+                                            <field name="link_to">CS / Lieutenant </field>
+                                            <data>CS : 42 : 1</data>
+                                          </block>
+                                        </statement>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
